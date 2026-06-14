@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Zensical build output
+site/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.envrc
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Dev Container generated lockfile (per-host, not portable)
+.devcontainer/devcontainer-lock.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pre-commit
+.pre-commit-cache/
+
+# Misc
+*.log
+.tmp/
+.dev-suite-backups/
+
+# Zensical/MkDocs Cache
+.cache/
+
+# AI assistant notes (personal use only)
+AI-ASSISTANT.md
+AI_HELPER.md
+AI_NOTES.md
+COPILOT.md
+QWEN.md
+BARD.md
+.antigravitycli/
+.gemini/
+
+# Copied Spanish assets (DRY synchronized on serve/build)
+content/es/assets/stylesheets/
+content/es/assets/javascripts/
+content/es/assets/fonts/
+content/es/assets/images/logo.svg
+content/es/assets/images/favicon.svg
+content/es/assets/images/profile.svg
+content/es/assets/images/banner.svg
+content/es/assets/images/zensical-slate-theme-preview.webp
+

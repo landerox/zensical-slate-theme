@@ -1,0 +1,125 @@
+# =============================================================================
+# Pre-commit Configuration
+# =============================================================================
+#
+# This file configures pre-commit hooks for code quality and security checks.
+#
+# Setup:
+#   pip install pre-commit
+#   pre-commit install
+#
+# Manual run:
+#   pre-commit run --all-files
+#
+# Update hooks:
+#   pre-commit autoupdate
+#
+# =============================================================================
+default_install_hook_types: [pre-commit, commit-msg]
+
+repos:
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-added-large-files
+        args: ["--maxkb=3000"]
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+        args: [--unsafe]
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+      - id: trailing-whitespace
+
+  # Conventional Commits - Validate commit messages
+  - repo: local
+    hooks:
+      - id: commitizen
+        name: commitizen
+        entry: uv run cz check --commit-msg-file
+        language: system
+        stages: [commit-msg]
+
+  # cspell - Spell checking
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v10.0.0
+    hooks:
+      - id: cspell
+        args: ["--config", ".config/.cspell.json", "--no-must-find-files"]
+
+  # Gitleaks - Prevent credential commits
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.0
+    hooks:
+      - id: gitleaks
+        exclude: ^content/(?:en|es)/assets/fonts/.*
+
+  # Markdownlint - Markdown Validation
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.48.0
+    hooks:
+      - id: markdownlint
+        args:
+          [
+            "--fix",
+            "--config",
+            ".config/.markdownlint.yaml",
+            "--ignore-path",
+            ".config/.markdownlintignore",
+          ]
+
+  # actionlint - GitHub Actions workflow linting
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.12
+    hooks:
+      - id: actionlint
+
+  # zizmor - GitHub Actions security audit
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
+    rev: v1.25.2
+    hooks:
+      - id: zizmor
+
+  # ESLint - JavaScript validation
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v10.5.0
+    hooks:
+      - id: eslint
+        files: \.[jt]sx?$
+        args: ["--config", "eslint.config.js"]
+        additional_dependencies:
+          - eslint@9.16.0
+
+  # Stylelint - CSS validation
+  - repo: https://github.com/thibaudcolas/pre-commit-stylelint
+    rev: v17.13.0
+    hooks:
+      - id: stylelint
+        args: ["--config", ".config/.stylelintrc.json", "--allow-empty-input"]
+        additional_dependencies:
+          - stylelint@16.11.0
+          - stylelint-config-standard@36.0.1
+
+  # pip-audit - Python dependency vulnerability audit
+  # Mirrors the CI step in .github/workflows/lint.yml and the `just audit`
+  # recipe. Scoped to lockfile/pyproject changes so content commits are
+  # not penalized. Closes the gap documented in docs/decisions.md § 9.
+  - repo: local
+    hooks:
+      - id: pip-audit
+        name: pip-audit
+        entry: just audit
+        language: system
+        pass_filenames: false
+        files: ^(pyproject\.toml|uv\.lock)$
+
+      - id: check-i18n
+        name: check-i18n
+        entry: uv run python3 scripts/check_i18n.py
+        language: system
+        pass_filenames: false
+        files: ^content/.*\.md$
+

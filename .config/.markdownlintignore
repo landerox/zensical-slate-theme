@@ -1,0 +1,3 @@
+# Ignore Justfile as it is not a markdown document
+Justfile
+**/Justfile

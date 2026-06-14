@@ -1,0 +1,101 @@
+# Zensical Configuration
+# Documentation: https://zensical.org/docs/setup/basics/
+
+[project]
+site_name = "Zensical Slate Theme"
+site_url = "https://zensical.org"
+site_description = "Un portafolio personal y blog de código abierto, elegante y enfocado en desarrolladores, construido con Zensical."
+site_author = "Fernando Landero"
+copyright = "© 2026 Fernando Landero. Licencia MIT."
+
+docs_dir = "content/es"
+site_dir = "site/es"
+
+repo_url = "https://github.com/landerox/zensical-slate-theme"
+repo_name = "zensical-slate-theme"
+
+# Navigation structure
+nav = [
+  { "Inicio" = [ { "Resumen" = "index.md" } ] },
+  { "Proyectos" = [ { "Resumen" = "projects/index.md" } ] },
+  { "Blog" = [ { "Resumen" = "blog/index.md" },
+               { "Hola Mundo" = "blog/hello-world.md" } ] }
+]
+
+# Theme configuration
+[project.theme]
+name = "slate"
+language = "es"
+variant = "modern"
+favicon = "assets/images/favicon.svg"
+logo = "assets/images/logo.svg"
+
+features = [
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.instant.progress",
+  "navigation.tracking",
+  "navigation.tabs",
+  "navigation.sections",
+  "navigation.top",
+  "search.suggest",
+  "search.highlight",
+  "navigation.footer",
+  "content.code.copy",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle = { icon = "lucide/sun-moon", name = "Cambiar a modo claro" }
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "indigo"
+accent = "indigo"
+toggle = { icon = "lucide/sun", name = "Cambiar a modo oscuro" }
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "indigo"
+accent = "indigo"
+toggle = { icon = "lucide/moon-star", name = "Cambiar a preferencia del sistema" }
+
+[project.extra]
+alternate = [
+  { name = "English", link = "https://example.com/", lang = "en" },
+  { name = "Español", link = "https://example.com/es/", lang = "es" },
+]
+
+# Social links (footer)
+[[project.extra.social]]
+icon = "material/github"
+link = "https://github.com/landerox/zensical-slate-theme"
+name = "GitHub"
+
+# Markdown extensions
+[project.markdown_extensions.toc]
+permalink = false
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.blocks]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.md_in_html]

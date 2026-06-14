@@ -1,0 +1,4 @@
+# Zensical Theme Slate Configuration
+# Extends the core Zensical theme layout and templates
+name: slate
+extends: zensical

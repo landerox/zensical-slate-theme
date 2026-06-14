@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="slateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#82b0ff" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+  </defs>
+  <g>
+    <!-- Slab 1: Slate/Grey -->
+    <polygon points="20,70 40,20 52,20 32,70" fill="url(#darkGrad)" />
+    <!-- Slab 2: Glowing Blue-Indigo -->
+    <polygon points="42,80 62,30 74,30 54,80" fill="url(#slateGrad)" />
+  </g>
+</svg>

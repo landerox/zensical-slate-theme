@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Background Circle Gradient -->
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <!-- Glow effect for silhouette -->
+    <linearGradient id="avatarGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#82b0ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circle background with border -->
+  <circle cx="50" cy="50" r="48" fill="url(#avatarBg)" stroke="#334155" stroke-width="2" />
+
+  <!-- Stylized head and shoulders silhouette -->
+  <circle cx="50" cy="40" r="16" fill="url(#avatarGlow)" />
+  <path d="M18,80 C18,65 30,58 50,58 C70,58 82,65 82,80 Z" fill="url(#avatarGlow)" />
+
+  <!-- Sleek glowing accent line/ring to make it look premium -->
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#4f46e5" stroke-width="1.5" stroke-dasharray="20 10 5 10" opacity="0.5" />
+</svg>
