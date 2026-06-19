@@ -12,7 +12,7 @@
   <!-- markdownlint-disable MD013 -->
   <a href="https://github.com/landerox/zensical-slate-theme/actions/workflows/deploy.yml"><img src="https://github.com/landerox/zensical-slate-theme/actions/workflows/deploy.yml/badge.svg" alt="Deploy" /></a>
   <a href="https://github.com/landerox/zensical-slate-theme/actions/workflows/ci.yml"><img src="https://github.com/landerox/zensical-slate-theme/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
-  <a href="pyproject.toml"><img src="https://img.shields.io/badge/version-0.1.0-blue" alt="Version" /></a>
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/version-0.1.1-blue" alt="Version" /></a>
   <a href="https://pypi.org/project/slate-theme/"><img src="https://img.shields.io/pypi/v/slate-theme.svg?logo=pypi&logoColor=white" alt="PyPI Version" /></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/python-3.13%2B-blue?logo=python&logoColor=white" alt="Python" /></a>
   <a href="https://github.com/zensical/zensical"><img src="https://img.shields.io/badge/Zensical-0.0.45-FF9100" alt="Zensical" /></a>
