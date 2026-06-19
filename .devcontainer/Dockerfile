@@ -26,6 +26,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 # Pull uv & uvx from the pinned upstream image (see uv-source stage above).
 COPY --from=uv-source /uv /uvx /usr/local/bin/
 
+# Upgrade pip to the requested version
+RUN python3 -m pip install --no-cache-dir --upgrade pip==26.1.2
+
 # Install lychee (link checker, pinned vía LYCHEE_VERSION arg)
 ARG LYCHEE_VERSION="0.24.2"
 RUN --mount=type=bind,source=install-github-binary.sh,target=/install-github-binary.sh \
