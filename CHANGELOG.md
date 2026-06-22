@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.2] - 2026-06-21
+
+### Changed
+
+- Upgraded pinned `uv` tool version to `0.11.23` across all workflows
+  (`ci.yml`, `deploy.yml`, `quality.yml`, `uv-upgrade.yml`).
+- Upgraded `uv` in `.devcontainer/Dockerfile` to `0.11.23` and pinned it with
+  its multi-architecture manifest list SHA256 digest:
+  `sha256:d0a0a753ab981624b49c97abc98821c1c09f4ca69d1ef5cee69c501be3d88479`.
+- Upgraded `zensical` dependency to `0.0.46` in `pyproject.toml` and updated its
+  version badge in `README.md`.
+
+---
+
 ## [0.1.1] - 2026-06-18
 
 ### Fixed
