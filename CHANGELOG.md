@@ -17,6 +17,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgraded `zensical` dependency to `0.0.46` in `pyproject.toml` and updated its
   version badge in `README.md`.
 
+### Fixed
+
+- Resolved syntax error in DCO validation workflow (`dco.yml`) when manually
+  triggered via `workflow_dispatch` with empty pull request parameters.
+
+### Security
+
+- Configured `main-branch-protection` repository ruleset requiring signed
+  commits, linear history, pull requests, and status checks (`ci`, `DCO`).
+- Enabled commit signing (`sign-commits: true`) in the weekly lockfile upgrade
+  workflow (`uv-upgrade.yml`) to satisfy branch protection requirements.
+- Configured grouped security updates in `dependabot.yml` to consolidate action
+  and python dependency security alerts.
+
 ---
 
 ## [0.1.1] - 2026-06-18
