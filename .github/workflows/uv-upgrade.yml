@@ -47,6 +47,7 @@ jobs:
           branch: chore/weekly-uv-upgrade
           delete-branch: true
           title: "chore(deps): weekly uv lock upgrade"
+          sign-commits: true
           body: |
             Automated weekly refresh of `uv.lock` via `uv lock --upgrade`.
 

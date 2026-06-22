@@ -21,7 +21,7 @@ concurrency:
 
 jobs:
   dco:
-    name: Verify DCO Sign-off
+    name: DCO
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -36,13 +36,15 @@ jobs:
         run: |
           set -euo pipefail
 
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
-          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
-
-          echo "Checking commits in range: $BASE_SHA..$HEAD_SHA"
-
-          # Get all commit hashes in the PR
-          commits=$(git log --format="%H" "$BASE_SHA..$HEAD_SHA")
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manually triggered workflow. Checking last 5 commits on current HEAD."
+            commits=$(git log -5 --format="%H")
+          else
+            BASE_SHA="${{ github.event.pull_request.base.sha }}"
+            HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+            echo "Checking commits in range: $BASE_SHA..$HEAD_SHA"
+            commits=$(git log --format="%H" "$BASE_SHA..$HEAD_SHA")
+          fi
 
           if [ -z "$commits" ]; then
             echo "No commits found in the PR range."
