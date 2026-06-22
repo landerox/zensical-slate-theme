@@ -2,13 +2,13 @@
 # Global build args
 # =============================================================================
 # UV_VERSION is declared before the first FROM so it is visible across stages.
-ARG UV_VERSION="0.11.21"
+ARG UV_VERSION="0.11.23"
 
 # -----------------------------------------------------------------------------
 # uv source stage: pinned by UV_VERSION + SHA256 digest. Exists so the
 # final stage can `COPY --from=uv-source ...` without variable expansion in --from.
 # -----------------------------------------------------------------------------
-FROM ghcr.io/astral-sh/uv:${UV_VERSION}@sha256:ff07b86af50d4d9391d9daf4ff89ce427bc544f9aae87057e69a1cc0aa369946 AS uv-source
+FROM ghcr.io/astral-sh/uv:${UV_VERSION}@sha256:d0a0a753ab981624b49c97abc98821c1c09f4ca69d1ef5cee69c501be3d88479 AS uv-source
 
 # -----------------------------------------------------------------------------
 # Main devcontainer stage (mcr.microsoft.com/devcontainers/python on Debian 13)

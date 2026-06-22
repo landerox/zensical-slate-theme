@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "slate-theme"
-version = "0.1.1"
+version = "0.1.2"
 description = "A sleek, developer-focused, and open-source bilingual portfolio and blog site theme for Zensical."
 readme = "README.pypi.md"
 requires-python = ">=3.13"
@@ -34,7 +34,7 @@ classifiers = [
     "Topic :: Software Development :: Documentation",
 ]
 dependencies = [
-    "zensical>=0.0.45",
+    "zensical>=0.0.46",
 ]
 
 
@@ -58,7 +58,7 @@ packages = ["zensical_slate_theme"]
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.1.1"
+version = "0.1.2"
 tag_format = "v$version"
 version_files = ["pyproject.toml:^version"]
 gpg_sign = true
