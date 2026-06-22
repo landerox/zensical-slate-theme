@@ -17,5 +17,6 @@ exclude = [
     "https://www.vaultproject.io/.*",
     "https://opencv.org/.*",
     "https://hazelcast.com/.*",
-    "https://www.llama.com/.*"
+    "https://www.llama.com/.*",
+    "https://github.com/username/.*"
 ]
