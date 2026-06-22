@@ -25,17 +25,6 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - "content/**"
-      - "zensical_slate_theme/**"
-      - "zensical.toml"
-      - "zensical.es.toml"
-      - "pyproject.toml"
-      - "uv.lock"
-      - ".pre-commit-config.yaml"
-      - ".config/**"
-      - "eslint.config.js"
-      - ".github/workflows/ci.yml"
   workflow_dispatch:
 
 permissions:
