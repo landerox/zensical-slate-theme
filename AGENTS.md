@@ -59,6 +59,11 @@ conventions, and workflow of this repository.
   command or task). All system commands and git actions (such as staging,
   committing, pushing, and PR creation) must be fully proposed first for
   explicit user approval.
+- **No Force Pushing (Rewriting History Prohibited)**: Coding agents MUST NEVER
+  use `git push --force` or `git push --force-with-lease` under any
+  circumstances. If a branch's commit history needs correction, propose closing
+  the current Pull Request, deleting the remote branch, and recreating it fresh
+  rather than rewriting history.
 - **No Direct Local Merges/Rebases (PR-Only)**: Coding agents MUST NEVER run
   merge or rebase locally. The agent's role is strictly to prepare work on a
   separate release or feature branch (e.g., `release/v<version>`), commit
