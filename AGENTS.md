@@ -24,9 +24,17 @@ conventions, and workflow of this repository.
   symmetry between English and Spanish.
 - `Justfile`: Task runner definitions for syncing, building, linting, and
   testing.
+- `docs/security_assessment.md`: The threat model and assurance case for
+  repository security and CI/CD policies.
+- `docs/decisions.md`: Architectural and design decisions for the repository
+  (including changelog and audit scoping).
 
 ## 3. Critical Rules for AI Agents ⚠️
 
+- **Security Posture & Compliance**: AI Assistants must align all development
+  workflows with the official [Security Assessment](file:///home/nano/workspaces/github/personal/zensical-slate-theme/docs/security_assessment.md).
+  Mitigations such as Gitleaks secrets detection, CodeQL scans, and DCO commit
+  checks must be strictly adhered to.
 - **Bilingual Asset Policy (DRY)**: NEVER edit any CSS, JS, fonts, or primary
   images inside `content/es/assets/` directly!
   - `zensical_slate_theme/` is the single source of truth for theme-wide core
@@ -67,6 +75,9 @@ conventions, and workflow of this repository.
 - **PR Template Compliance**: Every Pull Request (PR) created by a coding agent
   must strictly comply with and fill out the template defined in
   `.github/PULL_REQUEST_TEMPLATE.md`.
+  - As a staging step, the agent must save the fully completed PR template text
+    to `.tmp/pull_request.txt` to verify metadata and checklist items before
+    proposing final changes.
 - **No Direct Local Merges/Rebases (PR-Only)**: Coding agents MUST NEVER run
   merge or rebase locally. The agent's role is strictly to prepare work on a
   separate release or feature branch (e.g., `release/v<version>`), commit
