@@ -64,6 +64,9 @@ conventions, and workflow of this repository.
   circumstances. If a branch's commit history needs correction, propose closing
   the current Pull Request, deleting the remote branch, and recreating it fresh
   rather than rewriting history.
+- **PR Template Compliance**: Every Pull Request (PR) created by a coding agent
+  must strictly comply with and fill out the template defined in
+  `.github/PULL_REQUEST_TEMPLATE.md`.
 - **No Direct Local Merges/Rebases (PR-Only)**: Coding agents MUST NEVER run
   merge or rebase locally. The agent's role is strictly to prepare work on a
   separate release or feature branch (e.g., `release/v<version>`), commit
